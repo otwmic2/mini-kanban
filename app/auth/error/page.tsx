@@ -8,13 +8,13 @@ export default async function ErrorPage({ searchParams }: { searchParams: Promis
       <div className="w-full max-w-sm">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Something went wrong</CardTitle>
+            <CardTitle className="text-2xl">Coś poszło nie tak</CardTitle>
           </CardHeader>
           <CardContent>
             {params?.error ? (
-              <p className="text-sm text-muted-foreground">Error: {params.error}</p>
+              <p className="text-sm text-muted-foreground">Błąd: {params.error}</p>
             ) : (
-              <p className="text-sm text-muted-foreground">An unspecified error occurred.</p>
+              <p className="text-sm text-muted-foreground">Wystąpił nieokreślony błąd.</p>
             )}
           </CardContent>
         </Card>

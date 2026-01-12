@@ -26,7 +26,7 @@ export default function SignUpPage() {
     setError(null)
 
     if (password !== repeatPassword) {
-      setError("Passwords do not match")
+      setError("Hasła nie pasują do siebie")
       setIsLoading(false)
       return
     }
@@ -51,7 +51,7 @@ export default function SignUpPage() {
         if (signInError) {
           // If sign in fails, it means email confirmation is required
           setError(
-            "Account created but requires email confirmation. Please check your email or contact support to disable email confirmation in Supabase settings.",
+            "Konto utworzone, ale wymaga potwierdzenia emaila. Sprawdź swoją skrzynkę lub skontaktuj się ze wsparciem, aby wyłączyć potwierdzenie emaila w ustawieniach Supabase.",
           )
           setIsLoading(false)
           return
@@ -72,8 +72,8 @@ export default function SignUpPage() {
       <div className="w-full max-w-sm">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Sign up</CardTitle>
-            <CardDescription>Create an account to start organizing tasks</CardDescription>
+            <CardTitle className="text-2xl">Rejestracja</CardTitle>
+            <CardDescription>Utwórz konto, aby zacząć organizować zadania</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSignUp}>
@@ -90,7 +90,7 @@ export default function SignUpPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Hasło</Label>
                   <Input
                     id="password"
                     type="password"
@@ -100,7 +100,7 @@ export default function SignUpPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="repeat-password">Repeat Password</Label>
+                  <Label htmlFor="repeat-password">Powtórz hasło</Label>
                   <Input
                     id="repeat-password"
                     type="password"
@@ -111,17 +111,17 @@ export default function SignUpPage() {
                 </div>
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "Creating account..." : "Sign up"}
+                  {isLoading ? "Tworzenie konta..." : "Zarejestruj się"}
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
-                  Note: If email confirmation is required, you need to disable it in your Supabase dashboard under
-                  Authentication {">"} Providers {">"} Email {">"} Confirm email (turn OFF)
+                  Uwaga: Jeśli wymagane jest potwierdzenie emaila, musisz je wyłączyć w panelu Supabase w Authentication{" "}
+                  {">"} Providers {">"} Email {">"} Confirm email (wyłącz)
                 </p>
               </div>
               <div className="mt-4 text-center text-sm">
-                Already have an account?{" "}
+                Masz już konto?{" "}
                 <Link href="/auth/login" className="underline underline-offset-4">
-                  Login
+                  Zaloguj się
                 </Link>
               </div>
             </form>

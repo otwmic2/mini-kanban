@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
-import KanbanBoard from "@/components/kanban-board"
+import BoardSelector from "@/components/board-selector"
 
 export default async function KanbanPage() {
   const supabase = await createClient()
@@ -15,7 +15,7 @@ export default async function KanbanPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <KanbanBoard userId={user.id} userEmail={user.email || ""} />
+      <BoardSelector userId={user.id} userEmail={user.email || ""} />
     </div>
   )
 }

@@ -46,8 +46,8 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Login</CardTitle>
-            <CardDescription>Enter your email to access your Kanban board</CardDescription>
+            <CardTitle className="text-2xl">Logowanie</CardTitle>
+            <CardDescription>Wprowadź swój email, aby uzyskać dostęp do tablicy Kanban</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin}>
@@ -64,7 +64,7 @@ export default function LoginPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Hasło</Label>
                   <Input
                     id="password"
                     type="password"
@@ -75,13 +75,13 @@ export default function LoginPage() {
                 </div>
                 {error && <p className="text-sm text-destructive">{error}</p>}
                 <Button type="submit" className="w-full" disabled={isLoading}>
-                  {isLoading ? "Logging in..." : "Login"}
+                  {isLoading ? "Logowanie..." : "Zaloguj się"}
                 </Button>
               </div>
               <div className="mt-4 text-center text-sm">
-                Don&apos;t have an account?{" "}
+                Nie masz konta?{" "}
                 <Link href="/auth/sign-up" className="underline underline-offset-4">
-                  Sign up
+                  Zarejestruj się
                 </Link>
               </div>
             </form>
